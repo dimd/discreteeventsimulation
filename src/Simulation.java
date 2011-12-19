@@ -1,7 +1,7 @@
 
 public class Simulation {
 
-	private EventManager evtManager = new EventManager(1.0,0.7);
+	private EventManager evtManager = new EventManager(1.0,0.7,0.8);
 	
 	public void initialize(){
 		evtManager.createNextArrivalEvent();

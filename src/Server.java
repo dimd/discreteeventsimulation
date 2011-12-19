@@ -9,10 +9,12 @@ public class Server {
 	private Job currentJob;
 	private int numOfJobsInQueue=0,numOfJobs=0;
 	private double stayInQueue=0 ,stayInSystem=0, idle=0, idleSince;
+	private DistGenerator serviceGenerator;
 
-	public Server(ServerState state) {
+	public Server(ServerState state, double meanServiceTime) {
 		jobList = new LinkedList<Job>();
 		this.state = state;
+		this.serviceGenerator = new ExpDistGenerator(meanServiceTime);
 	}
 	
 	public void addJob(Job j){
@@ -43,7 +45,7 @@ public class Server {
 			idleSince = 0;
 		}
 	}
-	
+
 	public void deleteCurrentJob(){
 		currentJob.setDepartedAt(Clock.time);
 		stayInQueue += currentJob.getServedAt() - currentJob.getArrivedAt();
@@ -78,4 +80,8 @@ public class Server {
 		return idle;
 	}
 
+	public DistGenerator getServiceGenerator() {
+		return serviceGenerator;
+	}
+	
 }
