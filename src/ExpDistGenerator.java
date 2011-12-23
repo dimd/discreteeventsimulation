@@ -11,6 +11,7 @@ public class ExpDistGenerator implements DistGenerator{
 		this.mean = mean;
 	}
 	
+	@Override
 	public double nextVal() {
 		double value,u;
 		u = rand.nextDouble();

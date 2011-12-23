@@ -14,7 +14,7 @@ public class Server {
 	public Server(ServerState state, double meanServiceTime) {
 		jobList = new LinkedList<Job>();
 		this.state = state;
-		this.serviceGenerator = new ExpDistGenerator(meanServiceTime);
+		this.serviceGenerator = new ConstantDistGenerator(meanServiceTime);
 	}
 	
 	public void addJob(Job j){

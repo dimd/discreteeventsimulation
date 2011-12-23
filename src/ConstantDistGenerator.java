@@ -9,7 +9,6 @@ public class ConstantDistGenerator implements DistGenerator{
 	
 	@Override
 	public double nextVal() {
-		// TODO Auto-generated method stub
 		return mean;
 	}
 

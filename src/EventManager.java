@@ -87,16 +87,16 @@ public class EventManager {
 		System.out.println("\tserver 1: " + server1.getStayInSystem()/server1.getNumOfJobs());
 		System.out.println("\tserver 2: " + server2.getStayInSystem()/server2.getNumOfJobs());
 		System.out.println();
+		System.out.println("Total Service Time: ");
+		System.out.println("\t"+(server1.getStayInSystem()/server1.getNumOfJobs()+server2.getStayInSystem()/server2.getNumOfJobs()));
+		System.out.println();
 		System.out.println("Server Utilization:");
 		System.out.println("\tServer 1: " + (1-(server1.getIdle()/Clock.time)));
 		System.out.println("\tServer 2: " + (1-(server2.getIdle()/Clock.time)));
 		System.out.println();
-		//System.out.println("Stay in System for all jobs: "+(server1.getStayInSystem()+server2.getStayInSystem()));
-		//System.out.println();
 		System.out.println("Number of Jobs:");
 		System.out.println("\tServer 1: "+server1.getNumOfJobs());
 		System.out.println("\tServer 2: "+server2.getNumOfJobs());
 	}
-	
 	
 }
